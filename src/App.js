@@ -16,6 +16,8 @@ class App extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
+    windSpeed: undefined,
+    pressure: undefined,
     error: undefined
   }
 
@@ -40,6 +42,8 @@ class App extends React.Component {
         country: response.sys.country,
         humidity: response.main.humidity,
         description: response.weather[0].description,
+        windSpeed: response.wind.speed,
+        pressure: response.main.pressure,
         error: ""
       })
     }else{
@@ -75,6 +79,8 @@ class App extends React.Component {
                     country={this.state.country}
                     humidity={this.state.humidity}
                     description={this.state.description}
+                    windSpeed={this.state.windSpeed}
+                    pressure={this.state.pressure}
                     error={this.state.error}
                   />
                 </div>
